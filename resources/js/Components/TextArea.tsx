@@ -28,13 +28,14 @@ export default forwardRef(function TextInput(
   }, [isFocused]);
 
   return (
-    <input
+    <textarea
       {...props}
       type={type}
       className={
         "rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 " +
         className
       }
+      //   @ts-ignore
       ref={localRef}
     />
   );
