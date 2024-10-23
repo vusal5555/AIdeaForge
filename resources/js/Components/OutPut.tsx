@@ -1,9 +1,8 @@
-import "@toast-ui/editor/dist/toastui-editor.css";
-
-import { Editor } from "@toast-ui/react-editor";
 import PrimaryButton from "./PrimaryButton";
 import { Copy } from "lucide-react";
 import { useEffect, useRef } from "react";
+import { Editor } from "@toast-ui/react-editor";
+import "@toast-ui/editor/dist/toastui-editor.css";
 
 type Props = {
   aiOutput: string;
@@ -11,6 +10,8 @@ type Props = {
 
 const OutPut = ({ aiOutput }: Props) => {
   const editorRef: any = useRef();
+
+  console.log(aiOutput);
 
   useEffect(() => {
     editorRef.current.getInstance().setMarkdown(aiOutput);
@@ -26,17 +27,17 @@ const OutPut = ({ aiOutput }: Props) => {
           <Copy className="w-4 h-4"></Copy> Copy
         </PrimaryButton>
       </div>
-      <Editor
-        ref={editorRef}
-        initialValue="Your result will appear here"
-        value={aiOutput}
-        initialEditType="wysiwyg"
-        height="600px"
-        useCommandShortcut={true}
-        onChange={(e: any) => {
-          console.log(editorRef.current.getInstance().getMarkdown());
-        }}
-      />
+
+      <div>
+        <Editor
+          initialValue={aiOutput}
+          previewStyle="vertical"
+          height="600px"
+          initialEditType="wysiwyg"
+          useCommandShortcut={true}
+          ref={editorRef}
+        />
+      </div>
     </div>
   );
 };

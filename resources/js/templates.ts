@@ -23,6 +23,7 @@ export default [
       },
     ],
   },
+
   {
     name: "Blog Content",
     desc: "An AI tool that serves as your personal blog post content writer, generating catchy and viral-worthy content in your chosen niche.",
