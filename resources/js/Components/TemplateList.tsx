@@ -7,8 +7,6 @@ type Props = {
 };
 
 const TemplateList = ({ searchInput }: Props) => {
-  const [templarteList, setTemplateList] = useState<any[]>(templates);
-
   useEffect(() => {
     console.log(searchInput);
   }, [searchInput]);

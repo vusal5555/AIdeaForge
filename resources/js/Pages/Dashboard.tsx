@@ -11,7 +11,7 @@ export default function Dashboard() {
     <>
       <Head title="Dashboard"></Head>
       <MainLayout>
-        <div className="mt-10">
+        <div className="mt-10 flex flex-col gap-y-4">
           {/* Search section */}
           <SearchSection
             onSearchInput={(value: string) => setSearchInput(value)}
