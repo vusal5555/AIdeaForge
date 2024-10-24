@@ -18,7 +18,7 @@ const OutPut = ({ aiOutput }: Props) => {
   }, [aiOutput]);
   return (
     <div className="bg-white shadow-lg border rounded-lg">
-      <div className="flex justify-between items-center mb-4">
+      <div className="flex justify-between items-center mb-4 p-4">
         <h2 className="font-medium text-lg">Your result</h2>
         <PrimaryButton
           onClick={() => navigator.clipboard.writeText(aiOutput)}

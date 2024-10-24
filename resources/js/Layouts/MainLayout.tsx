@@ -17,7 +17,7 @@ const MainLayout = ({ children }: Props) => {
         <div className="ml-0 lg:ml-64 h-screen">
           <Header></Header>
 
-          <div className="p-5">{children}</div>
+          <div className="p-3 lg:p-5">{children}</div>
         </div>
       </div>
     </div>

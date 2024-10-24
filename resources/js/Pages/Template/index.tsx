@@ -79,7 +79,7 @@ const index = ({ template_slug }: Props) => {
     <>
       <Head title={formatTemplateSlug(template_slug)}></Head>
       <MainLayout>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-y-3 lg:gap-3">
           <FormSection
             useFormData={(value) => setFormData(value)}
             template={template}

@@ -17,7 +17,7 @@ const TemplateList = ({ searchInput }: Props) => {
     return template.name.toLowerCase().includes(searchInput.toLowerCase());
   });
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-5">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {filteredTemplates.map((template) => (
         <TemplateCard
           key={template.slug}
