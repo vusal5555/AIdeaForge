@@ -48,7 +48,7 @@ export default function Welcome() {
           </Link>
         </div>
 
-        <div className="border border-slate-200 shadow-lg">
+        <div>
           <img
             src="/app.png"
             className="w-full max-w-[800px] mx-auto h-full mt-5 p-2"
