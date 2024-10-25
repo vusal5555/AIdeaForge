@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use Inertia\Inertia;
+use Log;
 
 class BillingController extends Controller
 {
@@ -12,6 +14,12 @@ class BillingController extends Controller
     public function index()
     {
         return Inertia::render('Billing/index');
+    }
+
+    public function handle(Request $request)
+    {
+        $payload = $request->all();
+        Log::info('Paddle Webhook:', ['payload' => $payload]);
     }
 
 }

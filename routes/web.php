@@ -37,6 +37,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/billing', [BillingController::class, 'index'])->name('/billing');
     Route::get('/getTemplates', [TemplateController::class, 'getTemplates'])->name('/getTemplates');
 
+    Route::post('/paddle-webhook', [BillingController::class, 'handle']);
+
 });
 
 require __DIR__ . '/auth.php';

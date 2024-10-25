@@ -17,6 +17,7 @@
     @viteReactRefresh
     @vite(['resources/js/app.tsx', "resources/js/Pages/{$page['component']}.tsx"])
     @inertiaHead
+    @paddleJS
 </head>
 
 <body class="font-sans antialiased">

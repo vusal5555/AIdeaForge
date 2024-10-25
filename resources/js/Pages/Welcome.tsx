@@ -6,7 +6,7 @@ export default function Welcome() {
     <>
       <Head title="Welcome" />
 
-      <div className="lg:min-h-screen overflow-y-auto bg-slate-100">
+      <div className="min-h-screen overflow-y-auto bg-slate-100">
         <div className="max-w-7xl mx-auto flex  justify-between p-4">
           <Link href="/dashboard" className="flex gap-3">
             <img
