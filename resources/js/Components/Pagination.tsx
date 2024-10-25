@@ -40,8 +40,10 @@ const PaginationComponent = ({ templates }: Props) => {
   return (
     <Pagination>
       <PaginationContent>
-        {/* Conditionally render Previous button */}
-        <PaginationItem className={!templates.prev_page_url ? "disabled" : ""}>
+        {/* Conditionally render Previous button with margin-right */}
+        <PaginationItem
+          className={`${!templates.prev_page_url ? "disabled" : ""} mr-2`}
+        >
           {templates.prev_page_url ? (
             <PaginationPrevious href={templates.prev_page_url} />
           ) : (
@@ -49,15 +51,12 @@ const PaginationComponent = ({ templates }: Props) => {
           )}
         </PaginationItem>
 
-        {/* Dynamically render page numbers for the current chunk with margin on the first item */}
+        {/* Dynamically render page numbers for the current chunk */}
         {Array.from(
           { length: endPage - startPage + 1 },
           (_, index) => startPage + index
-        ).map((pageNumber, index) => (
-          <PaginationItem
-            key={pageNumber}
-            className={index === 0 ? "ml-2" : ""}
-          >
+        ).map((pageNumber) => (
+          <PaginationItem key={pageNumber}>
             <PaginationLink
               href={`?page=${pageNumber}`}
               isActive={currentPage === pageNumber}
@@ -80,8 +79,10 @@ const PaginationComponent = ({ templates }: Props) => {
           </PaginationItem>
         )}
 
-        {/* Conditionally render Next button */}
-        <PaginationItem className={!templates.next_page_url ? "disabled" : ""}>
+        {/* Conditionally render Next button with margin-left */}
+        <PaginationItem
+          className={`${!templates.next_page_url ? "disabled" : ""} ml-2`}
+        >
           {templates.next_page_url ? (
             <PaginationNext href={templates.next_page_url} />
           ) : (
