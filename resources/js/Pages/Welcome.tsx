@@ -6,7 +6,7 @@ export default function Welcome() {
     <>
       <Head title="Welcome" />
 
-      <div className="h-screen bg-slate-100">
+      <div className="lg:min-h-screen overflow-y-auto bg-slate-100">
         <div className="max-w-7xl mx-auto flex  justify-between p-4">
           <Link href="/dashboard" className="flex gap-3">
             <img
@@ -29,7 +29,7 @@ export default function Welcome() {
             </PrimaryButton>
           </Link>
         </div>
-        <div className="max-w-[85rem] mx-auto flex flex-col items-center justify-center mt-32 lg:mt-56 px-8">
+        <div className="max-w-[85rem] mx-auto flex flex-col items-center justify-center mt-16 lg:mt-20 px-8">
           <h1 className="text-5xl lg:text-6xl text-gray-800 mb-5 font-bold text-center">
             AI Content{" "}
             <span className="bg-clip-text bg-gradient-to-tl from-blue-600 to-violet-600 text-transparent">
@@ -37,7 +37,7 @@ export default function Welcome() {
             </span>
           </h1>
 
-          <p className=" text-md lg:text-lg text-gray-600 dark:text-neutral-400 text-center w-full max-w-[700px] mb-5">
+          <p className="text-md lg:text-lg text-gray-600 dark:text-neutral-400 text-center w-full max-w-[700px] mb-5">
             Effortlessly Create content, optimize SEO, and enhance your writing
             and code—all powered by AI.
           </p>
@@ -46,6 +46,14 @@ export default function Welcome() {
               Get started
             </PrimaryButton>
           </Link>
+        </div>
+
+        <div className="border border-slate-200 shadow-lg">
+          <img
+            src="/app.png"
+            className="w-full max-w-[800px] mx-auto h-full mt-5 p-2"
+            alt=""
+          />
         </div>
       </div>
     </>
