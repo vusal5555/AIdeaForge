@@ -8,7 +8,7 @@ type Props = {
 
 const MainLayout = ({ children }: Props) => {
   return (
-    <div className="bg-slate-100 h-screen">
+    <div className="bg-white h-full">
       <div className="hidden lg:block h-screen bg-white fixed w-0 lg:w-64 border border-gray-400/30 z-50">
         <Sidebar></Sidebar>
       </div>
