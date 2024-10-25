@@ -3,13 +3,14 @@ import MainLayout from "@/Layouts/MainLayout";
 import { Head } from "@inertiajs/react";
 import React from "react";
 import templateArray from "../../templates";
+import PaginationComponent from "@/Components/Pagination";
 
 type Props = {
   templates: any;
 };
 
 const HistoryPage = ({ templates }: Props) => {
-  console.log(templateArray);
+  console.log(templates);
   const [copiedStates, setCopiedStates] = React.useState<boolean[]>(
     Array(templates.length).fill(false)
   );
@@ -65,7 +66,7 @@ const HistoryPage = ({ templates }: Props) => {
           </div>
 
           <div>
-            {templates?.map((template: any, index: number) => {
+            {templates?.data.map((template: any, index: number) => {
               const templateDetails = getTemplateDetails(
                 template.template_slug
               );
@@ -111,6 +112,8 @@ const HistoryPage = ({ templates }: Props) => {
               );
             })}
           </div>
+
+          <PaginationComponent templates={templates}></PaginationComponent>
         </div>
       </MainLayout>
     </>

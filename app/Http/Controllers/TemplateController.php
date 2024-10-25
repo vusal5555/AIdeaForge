@@ -121,7 +121,7 @@ class TemplateController extends Controller
         $userId = auth()->user()->id;
 
         // Retrieve the templates for the authenticated user
-        $templates = Template::where('user_id', $userId)->get();
+        $templates = Template::where('user_id', $userId)->paginate(5);
 
         //add pagination here!!
 
