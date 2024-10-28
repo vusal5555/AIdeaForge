@@ -1,6 +1,5 @@
 import MainLayout from "@/Layouts/MainLayout";
 import { Head } from "@inertiajs/react";
-import axios from "axios";
 
 type Props = {};
 

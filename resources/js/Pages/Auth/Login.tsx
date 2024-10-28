@@ -91,10 +91,20 @@ export default function Login({
             </Link>
           )}
 
-          <PrimaryButton className="ms-4 bg-primary" disabled={processing}>
-            Log in
-          </PrimaryButton>
+          <Link
+            href={route("register")}
+            className="ms-4 rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+          >
+            Register
+          </Link>
         </div>
+
+        <PrimaryButton
+          className="ms-4 bg-primary w-full mt-4 flex justify-center items-center"
+          disabled={processing}
+        >
+          Log in
+        </PrimaryButton>
       </form>
     </GuestLayout>
   );

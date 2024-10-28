@@ -123,8 +123,6 @@ class TemplateController extends Controller
         // Retrieve the templates for the authenticated user
         $templates = Template::where('user_id', $userId)->paginate(5);
 
-        //add pagination here!!
-
         return Inertia::render('History/index', [
             'templates' => $templates,
         ]);

@@ -92,7 +92,7 @@ export default [
     icon: "https://cdn-icons-png.flaticon.com/128/402/402075.png",
     slug: "youtube-seo-title",
     aiPrompt:
-      "Give me Best SEO optimized high ranked 5 title ideas bullet wise only bases on keywords and outline and give me result in HTML tags format",
+      "Give me Best SEO optimized high ranked 5 title ideas bullet wise only bases on keywords and outline and give me result in rich text editor format",
     form: [
       {
         label: "Enter your youtube video topic keyowords",

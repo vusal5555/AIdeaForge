@@ -16,10 +16,10 @@ class BillingController extends Controller
         return Inertia::render('Billing/index');
     }
 
-    public function handle(Request $request)
+    public function webhook(Request $request)
     {
-        $payload = $request->all();
-        Log::info('Paddle Webhook:', ['payload' => $payload]);
+        Log::info('Webhook received:', ['request' => $request->all()]);
+        return response()->json(['status' => 'success']);
     }
 
 }
