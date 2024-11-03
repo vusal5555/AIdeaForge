@@ -1,6 +1,6 @@
 import React from "react";
 import PrimaryButton from "./PrimaryButton";
-import { Link } from "@inertiajs/react";
+import { Link, usePage } from "@inertiajs/react";
 import axios from "axios";
 import { TotalUsageContext } from "@/context/totalUageContext";
 
@@ -9,6 +9,11 @@ type Props = {};
 const UsageTrack = (props: Props) => {
   const [templates, setTemplates] = React.useState([]);
   const { usage, setUsage } = React.useContext(TotalUsageContext);
+
+  const user = usePage().props.auth.user;
+
+  if (!user) return null;
+
   const getTemplates = async () => {
     // get templates from api
     const res = await axios.get("/getTemplates");
@@ -45,7 +50,9 @@ const UsageTrack = (props: Props) => {
             }}
           ></div>
         </div>
-        <h2 className="font-medium text-sm mt-2">{usage}/100.000 words</h2>
+        <h2 className="font-medium text-sm mt-2">
+          {usage}/{user.credits} credits
+        </h2>
       </div>
 
       <Link href="/billing">

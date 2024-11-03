@@ -15,6 +15,7 @@
         "laravel/socialite": "^5.16",
         "laravel/tinker": "^2.9",
         "php-http/guzzle7-adapter": "^1.0",
+        "stripe/stripe-php": "^16.1",
         "tightenco/ziggy": "^2.0"
     },
     "require-dev": {

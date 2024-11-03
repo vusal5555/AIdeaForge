@@ -6,6 +6,7 @@ import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
 import { createRoot } from "react-dom/client";
 import { TotalUsageContext } from "./context/totalUageContext";
 import React from "react";
+import { Toaster } from "sonner";
 
 const appName = import.meta.env.VITE_APP_NAME || "AIdeaForge";
 
@@ -31,6 +32,7 @@ createInertiaApp({
     root.render(
       <AppWrapper>
         <App {...props} />
+        <Toaster />
       </AppWrapper>
     );
   },

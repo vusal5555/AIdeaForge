@@ -1,6 +1,5 @@
 import {
   LayoutDashboard,
-  ShieldPlus,
   CircleUser,
   FileClock,
   WalletCards,

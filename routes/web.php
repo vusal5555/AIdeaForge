@@ -23,6 +23,8 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('/dashboard');
 
+Route::post('/stripe/webhook', [BillingController::class, 'webhook']);
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('/profile');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -37,7 +39,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/billing', [BillingController::class, 'index'])->name('/billing');
     Route::get('/getTemplates', [TemplateController::class, 'getTemplates'])->name('/getTemplates');
 
-    Route::post('/buy-credits/webhook', [BillingController::class, 'webhook'])->name('/webhook');
+    Route::post('/checkout', [BillingController::class, 'checkout'])->name('checkout');
+    Route::get('/success', [BillingController::class, 'success'])->name('success');
 
 });
 
