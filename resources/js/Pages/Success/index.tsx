@@ -1,4 +1,3 @@
-import MainLayout from "@/Layouts/MainLayout";
 import { Head, Link } from "@inertiajs/react";
 
 type Props = {};
