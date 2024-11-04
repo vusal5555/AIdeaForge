@@ -3,15 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 use Log;
 use Stripe\Stripe;
 
 class BillingController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
         return Inertia::render('Billing/index');
@@ -21,6 +20,8 @@ class BillingController extends Controller
     {
         Stripe::setApiKey(config('stripe.sk'));
 
+        $user = Auth::user();
+
         $session = \Stripe\Checkout\Session::create([
             'payment_method_types' => ['card'],
             'line_items' => [[
@@ -28,13 +29,14 @@ class BillingController extends Controller
                     'currency' => 'usd',
                     'product_data' => [
                         'name' => 'AI Content Generator',
-                        'description' => 'Get your 10000 credits', // Add your description here
+                        'description' => 'Get your 10000 credits',
                     ],
                     'unit_amount' => 999,
                 ],
                 'quantity' => 1,
             ]],
             'mode' => 'payment',
+            'customer_email' => $user->email,
             'success_url' => route('success'),
             'cancel_url' => route('/billing'),
         ]);

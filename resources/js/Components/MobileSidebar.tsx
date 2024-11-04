@@ -2,11 +2,8 @@ import { Sheet, SheetContent, SheetTrigger } from "@/Components/ui/sheet";
 import menuOption from "@/menuOption";
 import { Link } from "@inertiajs/react";
 import { Menu } from "lucide-react";
-import UsageTrack from "./UsageTrack";
 
-type Props = {};
-
-const MobileSidebar = (props: Props) => {
+const MobileSidebar = () => {
   const path = route().current();
   return (
     <Sheet>

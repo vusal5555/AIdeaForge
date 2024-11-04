@@ -1,8 +1,6 @@
 import { Head, Link } from "@inertiajs/react";
 
-type Props = {};
-
-const index = (props: Props) => {
+const index = () => {
   return (
     <>
       <Head title="Success"></Head>

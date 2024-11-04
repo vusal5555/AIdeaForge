@@ -1,17 +1,7 @@
-import { Link, usePage } from "@inertiajs/react";
-import PrimaryButton from "./PrimaryButton";
 import MobileSidebar from "./MobileSidebar";
 import { Search } from "lucide-react";
 
-type Props = {};
-
-const Header = (props: Props) => {
-  const { auth } = usePage().props;
-  const user = auth.user as { credits?: number };
-
-  const credits =
-    user.credits !== undefined ? (user.credits <= 0 ? 0 : user.credits) : 0;
-
+const Header = () => {
   return (
     <div className="flex justify-between items-center gap-3 p-4 shadow-sm border-2 w-full bg-white">
       <div className="flex items-center gap-2 p-2 rounded-lg border-2 w-full max-w-lg">

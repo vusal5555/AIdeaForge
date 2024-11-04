@@ -6,15 +6,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/Components/ui/card";
-import PrimaryButton from "./PrimaryButton";
-import { Link, useForm } from "@inertiajs/react";
+import { Link } from "@inertiajs/react";
 
 const CardComponentPaidTier = () => {
-  const { post } = useForm();
-  const handleCheckout = () => {
-    // Call the post function to submit to the checkout route
-    post(route("checkout"));
-  };
   return (
     <Card className="shadow-2xl rounded-lg">
       <CardHeader>

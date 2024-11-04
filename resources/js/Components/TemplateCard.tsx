@@ -1,7 +1,4 @@
 import { Link } from "@inertiajs/react";
-import React from "react";
-
-type Props = {};
 
 export interface Template {
   name: string;
